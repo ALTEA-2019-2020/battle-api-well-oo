@@ -1,7 +1,7 @@
 # battle-api-welloo
 
 ## But du projet
-API permettant de représenter un combat entre deux dresseur de pokémon sous format json
+API permettant de représenter un combat entre deux dresseurs de pokémon sous format json
 
 ## Lancer l'application
 Pour lancer l'application, il suffit d'exécuter la commande suivante:
