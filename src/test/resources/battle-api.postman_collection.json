@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "bb5caddf-e492-4b92-92bb-0c4ce517c33e",
+		"name": "battle-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create a battle",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5381b5ea-fcd9-44af-b387-ed103e0d5355",
+						"exec": [
+							"let uuid =  pm.response.json()",
+							"pm.globals.set(\"uuid\",uuid);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9001/battles?trainer=Ash&opponent=Misty",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"battles"
+					],
+					"query": [
+						{
+							"key": "trainer",
+							"value": "Ash"
+						},
+						{
+							"key": "opponent",
+							"value": "Misty"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get the battles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9001/battles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"battles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get a specific battle with uuid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9001/battles/bd78a36a-f7fe-4499-abe9-701e8f678297",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"battles",
+						"bd78a36a-f7fe-4499-abe9-701e8f678297"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "attack",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9001/battles/{{uuid}}/Ash/attack",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"battles",
+						"{{uuid}}",
+						"Ash",
+						"attack"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
